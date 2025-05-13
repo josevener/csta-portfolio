@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jose Vener Rafael - Portfolio</title>
+    <link rel="icon" href="/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .dark .glassmorphism {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      #mobile-menu {
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 300px;
+      }
+      .project-image:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+    <div id="root">
+      <!-- Navigation Bar -->
+      <nav class="bg-teal-600 dark:bg-gray-800 text-white sticky top-0 z-50 shadow-xl glassmorphism" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-4">
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex justify-center flex-1 space-x-8">
+              <li><a href="#home" class="hover:bg-teal-500 dark:hover:bg-amber-500 hover:bg-opacity-30 px-3 py-2 rounded-md transition-all duration-300 text-lg font-medium">Home</a></li>
+              <li><a href="#about" class="hover:bg-teal-500 dark:hover:bg-amber-500 hover:bg-opacity-30 px-3 py-2 rounded-md transition-all duration-300 text-lg font-medium">About</a></li>
+              <li><a href="#projects" class="hover:bg-teal-500 dark:hover:bg-amber-500 hover:bg-opacity-30 px-3 py-2 rounded-md transition-all duration-300 text-lg font-medium">Projects</a></li>
+              <li><a href="#contact" class="hover:bg-teal-500 dark:hover:bg-amber-500 hover:bg-opacity-30 px-3 py-2 rounded-md transition-all duration-300 text-lg font-medium">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Button and Theme Toggle -->
+            <div class="flex items-center space-x-4">
+              <button id="theme-toggle" class="focus:outline-none" aria-label="Toggle dark mode">
+                <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="sun-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                  <path class="moon-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 11a7 7 0 009.79 1.79z"></path>
+                </svg>
+              </button>
+              <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- Mobile Menu -->
+          <ul id="mobile-menu" class="md:hidden text-center">
+            <li><a href="#home" class="block px-3 py-2 hover:bg-teal-500 dark:hover:bg-amber-500 hover:bg-opacity-30 rounded-md transition-all duration-300 text-lg font-medium">Home</a></li>
+            <li><a href="#about" class="block px-3 py-2 hover:bg-teal-500 dark:hover:bg-amber-500 hover:bg-opacity-30 rounded-md transition-all duration-300 text-lg font-medium">About</a></li>
+            <li><a href="#projects" class="block px-3 py-2 hover:bg-teal-500 dark:hover:bg-amber-500 hover:bg-opacity-30 rounded-md transition-all duration-300 text-lg font-medium">Projects</a></li>
+            <li><a href="#contact" class="block px-3 py-2 hover:bg-teal-500 dark:hover:bg-amber-500 hover:bg-opacity-30 rounded-md transition-all duration-300 text-lg font-medium">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center py-20 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+          <div class="text-center animate-fade-in">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-teal-600 dark:text-amber-500 mb-6">Jose Vener Rafael</h1>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">Passionate web developer crafting dynamic and interactive digital experiences. Explore my work and let's connect!</p>
+            <a href="#contact" class="mt-8 inline-block bg-teal-600 dark:bg-amber-500 text-white px-8 py-4 rounded-full hover:bg-teal-700 dark:hover:bg-amber-600 transition-all duration-300 text-lg font-semibold shadow-lg">Get in Touch</a>
+          </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+          <h2 class="text-4xl font-bold text-center text-teal-600 dark:text-amber-500 mb-12">About Me</h2>
+          <div class="flex flex-col md:flex-row items-center max-w-5xl mx-auto glassmorphism p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="md:w-1/2 mb-6 md:mb-0 md:pr-6">
+              <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">I'm a skilled web developer proficient in HTML, CSS, JavaScript, React, and Node.js. My passion lies in building efficient, user-friendly web applications that deliver seamless experiences.</p>
+            </div>
+            <div class="md:w-1/2">
+              <img src="https://i.pinimg.com/736x/fa/d5/e7/fad5e79954583ad50ccb3f16ee64f66d.jpg" alt="Jose Vener Rafael" class="rounded-full w-64 h-64 mx-auto object-cover shadow-md">
+            </div>
+          </div>
+        </section>
+
+        <!-- My Projects Section -->
+        <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
+          <h2 class="text-4xl font-bold text-center text-teal-600 dark:text-amber-500 mb-12">My Projects</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover transition-all duration-300 glassmorphism">
+              <img src="https://cdn.dribbble.com/userupload/39039843/file/original-adb8eff4f5988e4cd53970eaa10544b8.png?resize=752x&vertical=center" alt="Personal Portfolio Website" class="w-full h-48 object-cover rounded-lg mb-4 project-image">
+              <h3 class="text-xl font-semibold text-teal-600 dark:text-amber-500 mb-2">Personal Portfolio Website</h3>
+              <p class="text-gray-600 dark:text-gray-300">A responsive portfolio site built with HTML, CSS, and JavaScript, showcasing my skills, experience, and projects with a contact form and dynamic content.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover transition-all duration-300 glassmorphism">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/7fb979108549437.5fbff34906db1.jpg" alt="Task Management App" class="w-full h-48 object-cover rounded-lg mb-4 project-image">
+              <h3 class="text-xl font-semibold text-teal-600 dark:text-amber-500 mb-2">Task Management App</h3>
+              <p class="text-gray-600 dark:text-gray-300">A web-based task management app using React.js and Node.js, featuring real-time task creation, updates, and deletion with database synchronization.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover transition-all duration-300 glassmorphism">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs_webp/15430183703037.5d6671cae4889.jpg" alt="E-commerce Website" class="w-full h-48 object-cover rounded-lg mb-4 project-image">
+              <h3 class="text-xl font-semibold text-teal-600 dark:text-amber-500 mb-2">E-commerce Website</h3>
+              <p class="text-gray-600 dark:text-gray-300">An e-commerce platform built with Django and PostgreSQL, including product listings, user authentication, shopping cart, and payment gateway integration.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Me Section -->
+        <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+          <h2 class="text-4xl font-bold text-center text-teal-600 dark:text-amber-500 mb-12">Contact Me</h2>
+          <div class="max-w-3xl mx-auto text-center">
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">I'm excited to connect for inquiries or collaboration opportunities!</p>
+            <p class="text-lg">Email: <a href="mailto:intern.josevener@gmail.com" class="text-teal-600 dark:text-amber-500 hover:text-teal-500 dark:hover:text-amber-400 hover:underline transition-colors duration-300">intern.josevener@gmail.com</a></p>
+            <p class="text-lg">Phone: <span class="text-gray-700 dark:text-gray-300">09953223495</span></p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-teal-600 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-center py-8">
+        <p>© 2025 JVR Enterprises. All rights reserved.</p>
+      </footer>
+
+      <!-- Back to Top Button -->
+      <a href="#home" class="fixed bottom-6 right-6 bg-teal-600 dark:bg-amber-500 text-gray-800 dark:text-gray-200 p-4 rounded-full shadow-lg hover:bg-teal-700 dark:hover:bg-amber-600 transition-all duration-300 z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+      </a>
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+      });
+
+      // Close mobile menu when a link is clicked
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+        });
+      });
+
+      // Dark mode toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const html = document.documentElement;
+      const sunIcon = themeIcon.querySelector('.sun-icon');
+      const moonIcon = themeIcon.querySelector('.moon-icon');
+
+      // Check for saved theme or system preference
+      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+      } else {
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+      }
+
+      themeToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        if (html.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        } else {
+          localStorage.setItem('theme', 'light');
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>
